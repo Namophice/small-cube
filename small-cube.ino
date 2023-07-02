@@ -8,7 +8,7 @@
 
 TFT_eSPI tft = TFT_eSPI();
 
-const char *ssid = "Tenda_AE4BB0";
+const char *ssid = "Xiaomi_6B37_2.4G";
 const char *password = "0123456789qwerdf";
 
 WiFiUDP ntpUDP;
@@ -149,8 +149,10 @@ void wifiConnect() {
   tft.fillScreen(TFT_BLACK);
 }
 
-void showCostomChar(int32_t x, int32_t y, const char c[3], uint32_t color) { 
-  for (int k = 0; k < 3; k++)
-    if (hanzi[k].Index[0] == c[0] && hanzi[k].Index[1] == c[1] && hanzi[k].Index[2] == c[2]) { tft.drawBitmap(x, y, hanzi[k].hz_Id, hanzi[k].hz_width, 40, color);
+void showCostomChar(int32_t x, int32_t y, const char c[3], uint32_t color) {
+  for (int k = 0; k < 3; k++) {
+    if (hanzi[k].Index[0] == c[0] && hanzi[k].Index[1] == c[1] && hanzi[k].Index[2] == c[2]) {
+      tft.drawBitmap(x, y, hanzi[k].hz_Id, hanzi[k].hz_width, 40, color);
     }
+  }
 }
