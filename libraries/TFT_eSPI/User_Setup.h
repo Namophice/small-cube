@@ -9,7 +9,7 @@
 //   Note that some sketches are designed for a particular TFT pixel width/height
 
 // User defined information reported by "Read_User_Setup" test & diagnostics example
-// #define USER_SETUP_INFO "User_Setup"
+#define USER_SETUP_INFO "User_Setup"
 
 // Define to disable all #warnings in library (can be put in User_Setup_Select.h)
 //#define DISABLE_ALL_LIBRARY_WARNINGS
@@ -73,7 +73,7 @@
 // For ST7735, ST7789 and ILI9341 ONLY, define the colour order IF the blue and red are swapped on your display
 // Try ONE option at a time to find the correct colour order for your display
 
-//  #define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
+// #define TFT_RGB_ORDER TFT_RGB  // Colour order Red-Green-Blue
 #define TFT_RGB_ORDER TFT_BGR  // Colour order Blue-Green-Red
 
 // For M5Stack ESP32 module with integrated ILI9341 display ONLY, remove // in line below
@@ -83,11 +83,11 @@
 // For ST7789, ST7735, ILI9163 and GC9A01 ONLY, define the pixel width and height in portrait orientation
 // #define TFT_WIDTH  80
 // #define TFT_WIDTH  128
-#define TFT_WIDTH  240 // ST7789 172 x 320
+// #define TFT_WIDTH  240 // ST7789 172 x 320
 #define TFT_WIDTH  240 // ST7789 240 x 240 and 240 x 320
 // #define TFT_HEIGHT 160
 // #define TFT_HEIGHT 128
-// #define TFT_HEIGHT 240 // ST7789 240 x 240
+#define TFT_HEIGHT 240 // ST7789 240 x 240
 // #define TFT_HEIGHT 320 // ST7789 240 x 320
 // #define TFT_HEIGHT 240 // GC9A01 240 x 240
 
@@ -203,23 +203,23 @@
 // For ESP32 Dev board (only tested with ILI9341 display)
 // The hardware SPI can be mapped to any pins
 
-#define TFT_MISO 19
-#define TFT_MOSI 23
-#define TFT_SCLK 18
-#define TFT_CS   27  // Chip select control pin
-#define TFT_DC   25  // Data Command control pin
-#define TFT_RST  26  // Reset pin (could connect to RST pin)
+// #define TFT_MISO 19
+// #define TFT_MOSI 23
+// #define TFT_SCLK 18
+// #define TFT_CS   27  // Chip select control pin
+// #define TFT_DC   25  // Data Command control pin
+// #define TFT_RST  26  // Reset pin (could connect to RST pin)
 // #define TFT_RST  -1  // Set TFT_RST to -1 if display RESET is connected to ESP32 board RST
 
 // For ESP32 Dev board (only tested with GC9A01 display)
 // The hardware SPI can be mapped to any pins
 
-//#define TFT_MOSI 15 // In some display driver board, it might be written as "SDA" and so on.
-//#define TFT_SCLK 14
-//#define TFT_CS   5  // Chip select control pin
-//#define TFT_DC   27  // Data Command control pin
-//#define TFT_RST  33  // Reset pin (could connect to Arduino RESET pin)
-//#define TFT_BL   22  // LED back-light
+#define TFT_MOSI 19 // In some display driver board, it might be written as "SDA" and so on.
+#define TFT_SCLK 23
+#define TFT_CS   18 // Chip select control pin
+#define TFT_DC   27  // Data Command control pin
+#define TFT_RST  25  // Reset pin (could connect to Arduino RESET pin)
+#define TFT_BL   26  // LED back-light
 
 //#define TOUCH_CS 21     // Chip select pin (T_CS) of touch screen
 

@@ -8,8 +8,8 @@
 
 TFT_eSPI tft = TFT_eSPI();
 
-const char *ssid = "Xiaomi_6B37_2.4G";
-const char *password = "0123456789qwerdf";
+const char *ssid = "***********";
+const char *password = "*****************";
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "ntp.aliyun.com");
@@ -21,8 +21,8 @@ void setup() {
   tft.writedata(0x20);
   tft.fillScreen(TFT_WHITE);
   tft.setTextColor(TFT_BLACK, TFT_WHITE);
-  tft.setTextSize(2);
-  tft.setCursor(10, 10, 1);
+  tft.setTextSize(1);
+  tft.setCursor(25, 25, 1);
   tft.print("Loading...");
   
   // 休眠2s
@@ -75,7 +75,7 @@ void loop() {
   tft.print(minutes);
 
   tft.setTextSize(2);
-  tft.setCursor(15, 100, 1);
+  tft.setCursor(15, 95, 1);
   tft.print(year);
   tft.print("/");
   if (month < 10) {
@@ -89,25 +89,25 @@ void loop() {
   tft.print(monthDay);
   
   tft.setTextSize(3);
-  tft.setCursor(185, 95, 1);
+  tft.setCursor(185, 90, 1);
   if (seconds < 10) {
     tft.print("0");
   }
   tft.print(seconds);
 
-  tft.drawLine(0, 135, 240, 135, TFT_WHITE);
+  tft.drawLine(15, 125, 225, 125, TFT_WHITE);
 
   tft.setSwapBytes(true);
-  tft.pushImage(0, 135, 100, 100, pics[picIndex]);
+  tft.pushImage(15, 125, 100, 100, pics[picIndex]);
   picIndex = picIndex + 1;
   if (picIndex >= 10) {
     picIndex = 0;
   }
 
-  showCostomChar(130, 140, "猪", TFT_WHITE);
-  showCostomChar(175, 140, "猪", TFT_WHITE);
-  showCostomChar(130, 190, "专", TFT_WHITE);
-  showCostomChar(175, 190, "属", TFT_WHITE);
+  showCostomChar(125, 130, "猪", TFT_WHITE);
+  showCostomChar(175, 130, "猪", TFT_WHITE);
+  showCostomChar(125, 175, "专", TFT_WHITE);
+  showCostomChar(175, 175, "属", TFT_WHITE);
 
   // 休眠1s
   delay(100);
@@ -125,7 +125,7 @@ void wifiConnect() {
     wifi_wait = wifi_wait + 1;
     temp = temp + 1;
 
-    tft.setCursor(10, 10, 1);
+    tft.setCursor(25, 25, 1);
     tft.print("Wifi connecting");
 
     if (wifi_wait == 1) {
@@ -140,7 +140,7 @@ void wifiConnect() {
     }
   }
 
-  tft.setCursor(10, 10, 1);
+  tft.setCursor(25, 25, 1);
   tft.println("Wifi connected     ");
   
   // 休眠2s
